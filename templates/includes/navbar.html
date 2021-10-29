@@ -1,0 +1,105 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a href="{% url 'home' %}">
+        <img id="z-logo" src="{% static 'images/z-logo.png'  %}" alt="Z Spices Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#spicenavbar" aria-controls="spicenavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="spicenavbar">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item d-lg-none">
+                <a href="{% url 'home' %}" class="nav-link">
+                    <i class="nav-icon fas fa-home"></i>Home
+                </a>
+            </li>
+            <li class="nav-item d-block d-lg-none">
+                <a href="#" class="nav-link">
+                    <p class="m-0" id="basket-total-mobile">
+                            {% if total %}
+                            <i class="nav-icon  fas fa-cart-plus"></i>
+                                €{{ total|floatformat:2 }}
+                            {% else %}
+                            <i class="nav-icon text-muted fas fa-shopping-cart"></i>
+                                €0.00
+                            {% endif %}
+                        </i>
+                    </p>
+                </a>
+            </li>
+
+             
+            <li class="nav-item dropdown d-lg-none">
+                <a href="#" id="navbarMobileDropdownProfile" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="nav-icon fas fa-sign-in-alt"></i>Login
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarMobileDropdownProfile" >
+                    <a href="" class="dropdown-item">Register</a>
+                    <a href="" class="dropdown-item">Login</a>
+                </div>
+            </li>
+            <li class="dropdown-divider hr-green"></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="navbarCateDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Products
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarCateDropdown">
+                    <a href="#" class="dropdown-item">View All</a>
+                    <a href="#" class="dropdown-item">Featured</a>
+                    <div class="dropdown-divider hr-green"></div>
+                        <a class="dropdown-item" href="#">category.friendly_name</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown d-none d-lg-block">
+                <a href="#" id="navbarDesktopDropdownContact" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Contact
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDesktopDropdownContact">
+                    <a href="#" class="dropdown-item">About</a>
+                    <a href="#" class="dropdown-item">FAQs</a>
+                    <a href="#" class="dropdown-item">Contact Us</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline justify-content-center" method="GET" action="">
+            <input class="form-control" name="qurey" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item d-none d-lg-block">
+                <a href="{% url 'home' %}" class="nav-link">
+                    <i class="nav-icon fas fa-home"></i>
+                </a>
+            </li>
+            <li class="nav-item dropdown d-none d-lg-block">
+                <a href="#" id="navbarMobileDropdownProfile" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="nav-icon fas fa-sign-in-alt"></i> Login
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarMobileDropdownProfile" >
+                    <a href="" class="dropdown-item">Register</a>
+                    <a href="" class="dropdown-item">Login</a>
+                </div>
+            </li>
+            <li class="nav-item d-none d-lg-block">
+                <a href="#" class="nav-link">
+                    <p class="m-0" id="basket-total-mobile">
+                        
+                            {% if total %}
+                            <i class="nav-icon  fas fa-cart-plus"></i>
+                                €{{ total|floatformat:2 }}
+                            {% else %}
+                            <i class="nav-icon text-muted fas fa-shopping-cart"></i>
+                                €0.00
+                            {% endif %}
+                        </i>
+                    </p>
+                </a>
+            </li>
+
+          </ul>
+    </div>
+    
+</nav>

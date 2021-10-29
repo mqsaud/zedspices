@@ -1,6 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
+{% block sub_title %}Home{% endblock %}
+{% block page_header %}
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
 
 {% block content %}
-    <h1 class="display-4 text-info">Welcome to Z Spices</h1>
+    <section class="container">
+        <div class="row text-center">
+            <div class="col-12 col-md-6">
+                <img src="{% static 'images/hero.jpg' %}" alt="Spice for Life logo" class="hero-image">
+            </div>
+            <div class="col-12 col-md-6 justify-content-center">
+                <ul>
+                    <li><a href="">Deals</a></li>
+                    <li><a href="">Clearance</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
 {% endblock %}
