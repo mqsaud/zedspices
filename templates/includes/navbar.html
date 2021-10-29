@@ -28,8 +28,25 @@
                     </p>
                 </a>
             </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown d-lg-none">
+                <a href="#" id="navbarMobileDropdownProfile" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="nav-icon fas fa-user-circle"></i>Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarMobileDropdownProfile">
+                    {% if request.user.is_supersuer %}
+                        <a href="" class="dropdown-item">Product Management</a>
+                    {% else %}
+                    <a href="{% url 'profile' %}" class="dropdown-item">My Details</a>
+                    <a href="{% url 'delivery' %}" class="dropdown-item">Delivery Details</a>
+                    <a href="{% url 'order_history' %}" class="dropdown-item">Order History</a>
+                    {% endif %}
+                    <div class="dropdown-divider hr-green"></div> 
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Log out</a>
+                </div>
+            </li>
 
-             
+            {% else %} 
             <li class="nav-item dropdown d-lg-none">
                 <a href="#" id="navbarMobileDropdownProfile" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="nav-icon fas fa-sign-in-alt"></i>Login
@@ -39,6 +56,7 @@
                     <a href="" class="dropdown-item">Login</a>
                 </div>
             </li>
+            {% endif %}
             <li class="dropdown-divider hr-green"></li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" id="navbarCateDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -49,6 +67,7 @@
                     <a href="#" class="dropdown-item">Featured</a>
                     <div class="dropdown-divider hr-green"></div>
                         <a class="dropdown-item" href="#">category.friendly_name</a>
+            
                 </div>
             </li>
             <li class="nav-item dropdown d-none d-lg-block">
