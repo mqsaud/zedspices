@@ -1,0 +1,21 @@
+html{
+    scroll-behavior: smooth;
+}
+
+/* Push the contents of the webpage blew the Navbar */
+
+main{
+    padding: 100px;
+    flex: 1 0 auto;
+}
+
+.hero-image{
+    width: 100%;
+}
+
+.deals{
+    color: red;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
