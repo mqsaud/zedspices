@@ -1,21 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700&display=swap');
+
 html{
     scroll-behavior: smooth;
 }
 
+body{
+    font-family: cairo, sans-serif;
+}
 /* Push the contents of the webpage blew the Navbar */
 
 main{
-    padding: 100px;
+    padding: 10px;
     flex: 1 0 auto;
 }
 
+.capital{
+    text-transform: uppercase;
+}
+
+.bg-black{
+    background: #000;
+}
+
+/* navbar Start */
+.navbar-collapse{
+    text-align: center;
+}
+
+.navbar h1{
+    color: red;
+}
+
+.delivery-offer h4{
+    font-size: .9rem;
+}
+/* navbar End */
 .hero-image{
     width: 100%;
 }
 
 .deals{
-    color: red;
     text-transform: uppercase;
     display: flex;
     align-items: center;
+}
+.deals h1{
+    color: red;
 }
