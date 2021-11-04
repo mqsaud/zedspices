@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block sub_title %}Products{% endblock %}
+
+{% block content %}
+<div class="row">
+{% for product in products %}
+    <div class="col-12 col-sm-6 col-md-6 col-lg-4 justify-content-center">
+        <a class="card product-card" href="{{product.get_absolute_url}}">
+            <div class="product-image-container mx-auto">
+                {% if product.image_url %}
+                <div class="image-size">
+                    <img class="product-image" src="{{ product.image_url }}" alt="{{ product.product_name }}">
+                {% else %}
+                    <img class="product-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.product_name }}">
+                {% endif %}
+                </div>
+            </div>
+            <div class="product-title">
+                <h6 class="display-name "><Strong>{{ product.name }}</Strong></h6>
+            </div>
+            <div class="product-info d-flex justify-content-between">
+                <p class="product-name">{{ product.name }}</p>
+                <p class="product-price"><strong>€{{ product.price }}</strong></p>
+            </div>
+        </a>
+    </div>   
+{% endfor %}
+</div>
+    
+{% endblock %}

@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light">
     <a href="{% url 'home' %}">
-        <h1><img id="z-logo" src="media/z-logo-small.png" alt="Z Spices Logo">&nbsp;Spices</h1>
+        <h1><img id="z-logo" src="{% static 'images/z-logo-small.png' %}" alt="Z Spices Logo">&nbsp;Spices</h1>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#spicenavbar" aria-controls="spicenavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,9 +37,9 @@
                     {% if request.user.is_supersuer %}
                         <a href="" class="dropdown-item">Product Management</a>
                     {% else %}
-                    <a href="{% url 'profile' %}" class="dropdown-item">My Details</a>
-                    <a href="{% url 'delivery' %}" class="dropdown-item">Delivery Details</a>
-                    <a href="{% url 'order_history' %}" class="dropdown-item">Order History</a>
+                    <a href=" url 'profile' " class="dropdown-item">My Details</a>
+                    <a href=" url 'delivery' " class="dropdown-item">Delivery Details</a>
+                    <a href=" url 'order_history' " class="dropdown-item">Order History</a>
                     {% endif %}
                     <div class="dropdown-divider hr-green"></div> 
                     <a href="{% url 'account_logout' %}" class="dropdown-item">Log out</a>
@@ -64,7 +64,6 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarCateDropdown">
                     <a href="#" class="dropdown-item">View All</a>
-                    <a href="#" class="dropdown-item">Featured</a>
                     <div class="dropdown-divider hr-green"></div>
                         <a class="dropdown-item" href="#">category.friendly_name</a>
             
