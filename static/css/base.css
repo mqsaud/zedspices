@@ -34,6 +34,10 @@ main{
 .delivery-offer h4{
     font-size: .9rem;
 }
+
+.input-outline{
+    border-color: #72ac72;
+}
 /* navbar End */
 .hero-image{
     width: 100%;
@@ -49,11 +53,27 @@ main{
 }
 
 /* products start */
+.overlay{
+    height: 100%;
+    width: 100%;
+    top: 72px;
+    left: 0;
+    position: fixed;
+    background: #cbf0a0cc;
+    z-index: -1;
+}
 
 .product-card{
     margin: 10px;
     border-color: aqua;
     color: black;
+}
+
+.product-card:hover {
+    text-decoration: none;
+    box-shadow: inset 0 1px 1px #72ac72, 0 0 8px #72ac72;
+    transition: .25s ease-in-out;
+    color: #000;
 }
 
 .product-image-container{

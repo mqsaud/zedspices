@@ -63,7 +63,7 @@
                     Products
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarCateDropdown">
-                    <a href="#" class="dropdown-item">View All</a>
+                    <a href="{% url 'products'  %}" class="dropdown-item">View All Products</a>
                     <div class="dropdown-divider hr-green"></div>
                         <a class="dropdown-item" href="#">category.friendly_name</a>
             
@@ -80,9 +80,9 @@
                 </div>
             </li>
         </ul>
-        <form class="form-inline justify-content-center" method="GET" action="">
-            <input class="form-control" name="qurey" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        <form class="form-inline justify-content-center " method="GET" action="">
+            <input class="form-control rounded-0 border-black" name="qurey" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-info rounded-0 my-2 my-sm-0" type="submit">
                 <i class="fas fa-search"></i>
             </button>
           </form>
