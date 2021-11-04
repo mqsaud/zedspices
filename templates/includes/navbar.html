@@ -1,7 +1,7 @@
 {% load static %}
 
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a href="{% url 'home' %}">
+    <a href="{% url 'home' %}" id="logo-no-line">
         <h1><img id="z-logo" src="{% static 'images/z-logo-small.png' %}" alt="Z Spices Logo">&nbsp;Spices</h1>
     </a>
     <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#spicenavbar" aria-controls="spicenavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,6 @@
                     <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                     <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
                     <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-            
                 </div>
             </li>
             <li class="nav-item dropdown d-none d-lg-block">
