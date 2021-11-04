@@ -5,6 +5,7 @@ class Category(models.Model):
     """ Define Category Model """
 
     class Meta:
+        verbose_name ='Category'
         verbose_name_plural = 'Categroies'
 
     name = models.CharField(max_length=254)
