@@ -22,6 +22,8 @@ main{
     background: #000;
 }
 
+
+
 /* navbar Start */
 .navbar-collapse{
     text-align: center;
@@ -39,6 +41,7 @@ main{
     border-color: #72ac72;
 }
 /* navbar End */
+
 .hero-image{
     width: 100%;
 }

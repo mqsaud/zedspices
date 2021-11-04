@@ -4,8 +4,8 @@
     <a href="{% url 'home' %}">
         <h1><img id="z-logo" src="{% static 'images/z-logo-small.png' %}" alt="Z Spices Logo">&nbsp;Spices</h1>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#spicenavbar" aria-controls="spicenavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#spicenavbar" aria-controls="spicenavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" ></span>
     </button>
     <div class="collapse navbar-collapse" id="spicenavbar">
         <ul class="navbar-nav mx-auto">
@@ -30,7 +30,7 @@
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item dropdown d-lg-none">
-                <a href="#" id="navbarMobileDropdownProfile" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="#" id="navbarMobileDropdownProfile" class="nav-link dropdown-toggle text-black" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="nav-icon fas fa-user-circle"></i>Profile
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarMobileDropdownProfile">
@@ -65,7 +65,9 @@
                 <div class="dropdown-menu" aria-labelledby="navbarCateDropdown">
                     <a href="{% url 'products'  %}" class="dropdown-item">View All Products</a>
                     <div class="dropdown-divider hr-green"></div>
-                        <a class="dropdown-item" href="#">category.friendly_name</a>
+                    <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                    <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                    <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
             
                 </div>
             </li>
@@ -80,8 +82,8 @@
                 </div>
             </li>
         </ul>
-        <form class="form-inline justify-content-center " method="GET" action="">
-            <input class="form-control rounded-0 border-black" name="qurey" type="search" placeholder="Search" aria-label="Search">
+        <form class="form-inline justify-content-center " method="GET" action="{% url 'products' %}">
+            <input class="form-control rounded-0 border-black" name="q" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-info rounded-0 my-2 my-sm-0" type="submit">
                 <i class="fas fa-search"></i>
             </button>
@@ -93,12 +95,12 @@
                 </a>
             </li>
             <li class="nav-item dropdown d-none d-lg-block">
-                <a href="#" id="navbarMobileDropdownProfile" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="#" id="navbarMobileDropdownProfile" class="nav-link dropdown-toggle text-dark" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="nav-icon fas fa-sign-in-alt"></i> Login
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarMobileDropdownProfile" >
                     <a href="" class="dropdown-item">Register</a>
-                    <a href="" class="dropdown-item">Login</a>
+                    <a href="" class="dropdown-item text-dark">Login</a>
                 </div>
             </li>
             <li class="nav-item d-none d-lg-block">
@@ -106,7 +108,7 @@
                     <p class="m-0" id="basket-total-mobile">
                         
                             {% if total %}
-                            <i class="nav-icon  fas fa-cart-plus"></i>
+                            <i class="nav-icon  fas fa-cart-plus" style="color: black;" ></i>
                                 €{{ total|floatformat:2 }}
                             {% else %}
                             <i class="nav-icon text-muted fas fa-shopping-cart"></i>
