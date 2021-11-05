@@ -7,7 +7,7 @@
 <div class="container-fluid">
     <div class="row mt-5">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="product-image-container mx-auto">
+                <div class="product-image-container">
                     {% if product.image_url %}
                     <div class="image-size">
                         <a href="{{ product.image_url }}" target="_blank">
@@ -22,8 +22,15 @@
                 </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 mt-5">
-                <p class="mb-0">{{ product.name }}</p>
-                <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
+                <h5 class="mb-0 font-weight-bold">{{ product.name }}</h5>
+                <p class="lead mb-0 text-left "><strong>€{{ product.price }}</strong></p>
+                {% if product.category %}
+                <p class="small mt-1 mb-0">
+                    <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted">
+                        <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                    </a>
+                </p>
+                {% endif%}
                 {% if product.rating %}
                 <small class="text-muted ml-0"><i class="fas fa-star pr-1"></i>{{ product.rating }} / 5</small>
                 {% else %}

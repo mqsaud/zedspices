@@ -25,7 +25,7 @@ main{
 
 
 /* navbar Start */
-#logo-no-line{
+#logo-no-line, #no-deco{
     text-decoration: none;
 }
 
@@ -70,8 +70,8 @@ overlay{
 }
 
 .product-card{
-    margin: 10px;
-    border-color: aqua;
+    padding: 10px 50px;
+    margin-top: 2px ;
     color: black;
 }
 
@@ -83,8 +83,8 @@ overlay{
 }
 
 .product-image-container{
-    height: 300;
-    max-width: 300;
+    height: 250px;
+    max-width: 250px;
     display: flex;
     align-items: center;
 }
@@ -108,7 +108,13 @@ overlay{
 }
 
 .product-info{
-    height: 80%;
+
+    background-color: aqua;
+    color: black;
+    padding: 5px;
+}
+
+.cate-info{
     background-color: aqua;
     color: black;
 }
@@ -116,4 +122,13 @@ overlay{
 .display-name{
     padding-top: 15px;
 }
+
+a.category-badge > span.badge:hover{
+    background: #212529;
+    color: #fff !important;
+}
+.text-black{
+    color:black;
+}
+
 /* products end */
