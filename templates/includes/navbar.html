@@ -15,11 +15,11 @@
                 </a>
             </li>
             <li class="nav-item d-block d-lg-none">
-                <a href="#" class="nav-link">
+                <a href="{% url 'view_bag' %}" class="nav-link {% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} ">
                     <p class="m-0" id="basket-total-mobile">
-                            {% if total %}
+                            {% if grand_total %}
                             <i class="nav-icon  fas fa-cart-plus"></i>
-                                €{{ total|floatformat:2 }}
+                                €{{ grand_total|floatformat:2 }}
                             {% else %}
                             <i class="nav-icon text-muted fas fa-shopping-cart"></i>
                                 €0.00
@@ -45,7 +45,6 @@
                     <a href="{% url 'account_logout' %}" class="dropdown-item">Log out</a>
                 </div>
             </li>
-
             {% else %} 
             <li class="nav-item dropdown d-lg-none">
                 <a href="#" id="navbarMobileDropdownProfile" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -93,22 +92,40 @@
                     <i class="nav-icon fas fa-home"></i>
                 </a>
             </li>
+            {% if request.user.is_superuser %}
             <li class="nav-item dropdown d-none d-lg-block">
-                <a href="#" id="navbarMobileDropdownProfile" class="nav-link dropdown-toggle text-dark" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="#" id="navbarDesktopDropdownProfile" class="nav-link dropdown-toggle text-black" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="nav-icon fas fa-user-circle"></i>Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDesktopDropdownProfile">
+                    {% if request.user.is_supersuer %}
+                        <a href="" class="dropdown-item">Product Management</a>
+                    {% else %}
+                    <a href=" url 'profile' " class="dropdown-item">My Details</a>
+                    <a href=" url 'delivery' " class="dropdown-item">Delivery Details</a>
+                    <a href=" url 'order_history' " class="dropdown-item">Order History</a>
+                    {% endif %}
+                    <div class="dropdown-divider hr-green"></div> 
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Log out</a>
+                </div>
+            </li>
+            {% else %} 
+            <li class="nav-item dropdown d-none d-lg-block">
+                <a href="#" id="navbarDesktopDropdownProfile" class="nav-link dropdown-toggle text-dark" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="nav-icon fas fa-sign-in-alt"></i> Login
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarMobileDropdownProfile" >
+                <div class="dropdown-menu" aria-labelledby="navbarDesktopDropdownProfile" >
                     <a href="" class="dropdown-item">Register</a>
                     <a href="" class="dropdown-item text-dark">Login</a>
                 </div>
             </li>
+            {% endif %}
             <li class="nav-item d-none d-lg-block">
-                <a href="#" class="nav-link">
-                    <p class="m-0" id="basket-total-mobile">
-                        
-                            {% if total %}
+                <a href="{% url 'view_bag' %}" class="nav-link {% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %}">
+                    <p class="m-0" id="basket-total">
+                            {% if grand_total %}
                             <i class="nav-icon  fas fa-cart-plus" style="color: black;" ></i>
-                                €{{ total|floatformat:2 }}
+                                €{{ grand_total|floatformat:2 }}
                             {% else %}
                             <i class="nav-icon text-muted fas fa-shopping-cart"></i>
                                 €0.00
@@ -117,8 +134,6 @@
                     </p>
                 </a>
             </li>
-
           </ul>
     </div>
-    
 </nav>
