@@ -102,6 +102,12 @@ overlay{
     max-width: 250px;
     display: flex;
     align-items: center;
+    
+}
+
+img:hover{
+    box-shadow: inset 0 1px 1px #72ac72, 0 0 8px #72ac72;
+    transition: .25s ease-in-out;
 }
 
 .image-size{
@@ -176,6 +182,12 @@ a.category-badge > span.badge:hover{
     background: black;
     color: white;
 }
+.btn-black:hover{
+    background: white;
+    color: black;
+    box-shadow: inset 0 1px 1px #72ac72, 0 0 8px #72ac72;
+    transition: .25s ease-in-out;
+}
 
 .btn-outline-black{
     background: white;
@@ -191,6 +203,8 @@ a.category-badge > span.badge:hover{
     top: 72px;
     right: 15px;
     z-index: 9999;
+    box-shadow: inset 0 1px 1px #72ac72, 0 0 8px #72ac72;
+    transition: .25s ease-in-out;
 }
 .custom-toast{
     overflow: visible;
@@ -201,6 +215,57 @@ a.category-badge > span.badge:hover{
 
 }
 
+/* From https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid black;
+  }
+
+/* Convenience classes - colors copied from Bootstrap */
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #1fc7e0 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
+}
+
+.text-yellow{
+    color: rgb(241, 226, 10);
+}
+
+.bag-note-wrapper{
+    height: 150px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 
 /* Toast End */
 
