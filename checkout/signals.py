@@ -8,7 +8,6 @@ def update_on_save(sender, instance, created, **kwargs):
     """
     Update order total on lineitem update/create
     """
-    print('save the total')
     instance.order.update_total()
 
 
