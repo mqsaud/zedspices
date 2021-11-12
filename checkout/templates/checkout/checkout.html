@@ -27,7 +27,7 @@
            </div>
            <div class="row">
                 <div class="col-12 col-lg-6 order-lg-last mb-5">
-                    <p class="text-muted">Order Summary: {{ product_count }} Items</p>
+                    <p class="bg-info text-center text-white">Order Summary: {{ product_count }} Items</p>
                     <div class="row">
                         <div class="col-7 offset-2">
                             <p class="mb-1 mt-0 small text-muted">Items</p>
@@ -70,9 +70,17 @@
                             <p class="my-0"><strong>€{{ grand_total|floatformat:2 }}</strong></p>
                         </div>
                     </div>
+                    <div class="submit-button text-right mt-5 mb-2">                    
+						<a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0">
+							<span class="icon">
+								<i class="fas fa-chevron-left"></i>
+							</span>
+							<span class="font-weight-bold">Adjust Bag</span>
+						</a>
+                    </div>    
                 </div>
                <div class="col-12 col-lg-6 ">
-                   <p class="text-muted bg-info"></p>
+                   <p class="bg-info text-center text-white">Please fill out the form below to complete your order</p>
                    <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="border">
                        {% csrf_token %}
                        <fieldset class="rounded px-3 mb-5">
@@ -81,7 +89,7 @@
                             {{ order_form.email | as_crispy_field }}
                        </fieldset>
                        <fieldset class="rounded px-3 mb-5">
-                            <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                            <legend class="fieldset-label small text-black px-2  w-auto">Delivery</legend>
                             {{ order_form.phone_number | as_crispy_field }}
                             {{ order_form.street_address1 | as_crispy_field }}
                             {{ order_form.street_address2 | as_crispy_field }}
@@ -137,3 +145,9 @@
     </section>
 {% endblock %}
 
+{% block postloadjs %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{% endblock %}
