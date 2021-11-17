@@ -22,7 +22,7 @@
 }
 
 .stripe-style-input::placeholder {
-    color: #aab7c4;
+    color: #aabbcc;
 }
 
 
@@ -37,6 +37,18 @@
     border: 1px solid #000;
 }
 
+#id_country {
+  padding: 0 10px;
+}
+
+select, select option {
+  color: #000;
+}
+
+select:invalid,
+select option[value=''] {
+  color: #aabbcc !important;
+}
 
 #loading-overlay {
   display: none;
