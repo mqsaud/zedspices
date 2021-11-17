@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block sub_title %}User Profile{% endblock %}
+{% block page_header %}
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <section>
+       <div class="container header-container" id="no-border">
+           <div class="row">
+               <div class="col">
+                   <hr>
+                   <h2 class="captal text-center mx-auto my-auto">My Profile</h2>
+                   <hr>
+               </div>
+           </div>
+        </div>  
+    </section>
+{% endblock %}
+
