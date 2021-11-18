@@ -59,6 +59,18 @@ main{
     color: red;
 }
 
+/*  Account, Login Start */
+
+.account-card:hover {
+    text-decoration: none;
+    box-shadow: inset 0 1px 1px #72ac72, 0 0 8px #72ac72;
+    transition: .25s ease-in-out;
+    color: #000;
+    border: 4px solid aqua;
+}
+
+/*  Account, Login   End */
+
 /* bag  start */
 
 #bag-table-pad{
