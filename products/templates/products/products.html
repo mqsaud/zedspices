@@ -55,12 +55,10 @@
             </div>
             <div class="product-image-container mx-auto pb-3">
                 {% if product.image_url %}
-                <div class="image-size">
                     <img class="product-image" src="{{ product.image_url }}" alt="{{ product.product_name }}">
                 {% else %}
                     <img class="product-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.product_name }}">
                 {% endif %}
-                </div>
             </div>
             <p class="text-black text-center my-2"><strong>Size: {{ product.size }}</strong></p> 
         </a>

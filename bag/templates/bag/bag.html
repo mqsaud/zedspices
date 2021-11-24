@@ -46,7 +46,11 @@
                                     <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                 </td>
                                 <td class=" w-25" >
-                                    <img class="img-fluid rounded d-none d-md-block " src="{{ item.product.image.url }}">
+                                    {% if item.product.image %}
+                                    <img class="img-fluid rounded d-none d-md-block" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                    {% else %}
+                                    <img class="img-fluid rounded d-none d-md-block" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                    {% endif %}
                                 </td>
                                 <td  id="bag-table-pad">
                                     <p class="my-0">€{{ item.product.price }}</p>

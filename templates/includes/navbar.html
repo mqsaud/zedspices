@@ -34,13 +34,13 @@
                     <i class="nav-icon fas fa-user-circle"></i>Profile
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarMobileDropdownProfile">
-                    {% if request.user.is_supersuer %}
-                        <a href="" class="dropdown-item">Product Management</a>
-                    {% else %}
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                    {% endif %}
                     <a href="{% url 'profile' %}" class="dropdown-item">My Details</a>
                     <a href=" url 'delivery' " class="dropdown-item">Delivery Details</a>
                     <a href=" url 'order_history' " class="dropdown-item">Order History</a>
-                    {% endif %}
+                    
                     <div class="dropdown-divider hr-green"></div> 
                     <a href="{% url 'account_logout' %}" class="dropdown-item">Log out</a>
                 </div>
@@ -92,19 +92,19 @@
                     <i class="nav-icon fas fa-home"></i>
                 </a>
             </li>
-            {% if request.user.is_superuser %}
+            {% if request.user.is_authenticated %}
             <li class="nav-item dropdown d-none d-lg-block">
                 <a href="#" id="navbarDesktopDropdownProfile" class="nav-link dropdown-toggle text-black" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="nav-icon fas fa-user-circle"></i>Profile
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDesktopDropdownProfile">
-                    {% if request.user.is_supersuer %}
-                        <a href="" class="dropdown-item">Product Management</a>
-                    {% else %}
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'add_product'  %}" class="dropdown-item">Product Management</a>
+                    {% endif %}
                     <a href=" {% url 'profile' %}" class="dropdown-item">My Details</a>
                     <a href=" url 'delivery' " class="dropdown-item">Delivery Details</a>
                     <a href=" url 'order_history' " class="dropdown-item">Order History</a>
-                    {% endif %}
+                    
                     <div class="dropdown-divider hr-green"></div> 
                     <a href="{% url 'account_logout' %}" class="dropdown-item">Log out</a>
                 </div>
