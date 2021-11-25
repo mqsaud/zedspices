@@ -72,7 +72,7 @@ def product_detail(request, product_id):
 def add_product(request):
     """ Add product to store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, Only the authorized persons are allowed')
+        messages.error(request, 'Sorry, Only the authorized persons are allowed to perform this task')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -100,7 +100,7 @@ def edit_product(request, product_id):
     Edit a product in store
     """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, Only the authorized persons are allowed')
+        messages.error(request, 'Sorry, Only the authorized persons are allowed to perform this task')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -131,7 +131,7 @@ def delete_product(request, product_id):
      Delete Product from the store
     """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, Only the authorized persons are allowed')
+        messages.error(request, 'Sorry, Only the authorized persons are allowed to perform this task')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
