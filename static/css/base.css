@@ -207,6 +207,13 @@ a.category-badge > span.badge:hover{
     border: 1px solid black;
 }
 
+.empty-bag{
+    background-color: rgb(8, 0, 0) !important;
+    color: white;
+    border: 1px solid red;
+    font-weight: bold;
+}
+
 /* products end */
 
 /* Toast Start */

@@ -1,0 +1,155 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "category": 10,
+        "sku": "0001001",
+        "name": "Nutmeg Whole",
+        "description": "Nutmeg is a popular spice made from the seeds of Myristica fragrans, a tropical evergreen tree native to Indonesia.\r\nIt can be found in whole-seed form but is most often sold as a ground spice. \r\nIt has a warm, slightly nutty flavour and is often used in desserts and curries, as well as drinks like mulled wine and chai tea.",
+        "has_sizes": true,
+        "size": null,
+        "price": "3.99",
+        "rating": "4.00",
+        "image_url": "https://om-dashboards-dev.s3.ap-south-1.amazonaws.com/products/2466b99a-6f36-4b28-a81f-f5751dca29af/1603717076296.png",
+        "image": "nutmeg-whole.png",
+        "credit": "https://omshreegroup.com/"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "category": 6,
+        "sku": "0001002",
+        "name": "Coriander powder",
+        "description": "Coriander, also known as cilantro or Chinese parsley, is a widely used spice native to the Mediterranean.\r\nThe vitamins, minerals, and antioxidants in coriander provide significant health benefits. Coriander leaves and seeds are full of vitamin K, which plays an important role in helping your blood clot.",
+        "has_sizes": true,
+        "size": null,
+        "price": "2.99",
+        "rating": "5.00",
+        "image_url": "https://om-dashboards-dev.s3.ap-south-1.amazonaws.com/products/f980c5ca-0c65-4a4f-aff9-a6e929cf4f64/1584077370114.png",
+        "image": "coreander-powder.png",
+        "credit": "https://omshreegroup.com/"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "category": 5,
+        "sku": "0001003",
+        "name": "Mango Pickle",
+        "description": "Mango pickle has many health benefits like improving digestive health, providing vitamin C",
+        "has_sizes": false,
+        "size": null,
+        "price": "3.99",
+        "rating": "4.50",
+        "image_url": "https://www.homemade.love/wp-content/uploads/2021/04/05-Punjabi-Aam-ka-achaar-homemade-love-1.png",
+        "image": "mango-pickle.jpg",
+        "credit": "https://www.homemade.love/"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+        "category": 10,
+        "sku": "0001004",
+        "name": "Black Cardamom",
+        "description": "Black cardamom is loaded with aromatic fragrances and contains numerous health benefits. Right from increasing your appetite to curing headaches, it can also help in relieving mental and emotional stress. They are extremely good for your hair, skin and body. Thus, consuming black cardamom can do wonders for your body.",
+        "has_sizes": true,
+        "size": null,
+        "price": "2.99",
+        "rating": "4.50",
+        "image_url": "https://mrbells.ie/wp-content/uploads/2020/06/black-cardamom-1.jpg",
+        "image": "black-cardamom-1.jpg",
+        "credit": "https://mrbells.ie/"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+        "category": 8,
+        "sku": "0001005",
+        "name": "ABC Extra Hot Chili Saucs",
+        "description": "An Extra hot chilli sauce from Indonesias favourite brand. Fresh red chillies and garlic give the perfect lift to any dish. Use it as a condiment, try it on hotdog, burgers, chips or pizza or add it to any rice or noodle dishes.\r\nABC Chili Sauces are of a thick consistency and can also be enjoyed also as a dipping sauce.",
+        "has_sizes": false,
+        "size": null,
+        "price": "2.20",
+        "rating": "4.10",
+        "image_url": "https://mrbells.ie/wp-content/uploads/2021/03/abc-extra-hot-335ml-e1617093726869.jpg",
+        "image": "abc-extra-hot-chili-sauce.jpg",
+        "credit": "https://mrbells.ie/"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+        "category": 4,
+        "sku": "0001006",
+        "name": "Jamaican Mixed Spice",
+        "description": "It consists of a combination of pimento, cinnamon, nutmeg, anise powder and dried orange peel. It is the essential blend for several traditional Jamaican baked goods.",
+        "has_sizes": true,
+        "size": null,
+        "price": "5.75",
+        "rating": "5.00",
+        "image_url": "https://i2.wp.com/amazingackee.com/wp-content/uploads/2019/01/jamaican-mixed-spice-for-baking-a-combination-of-warm-spices-perfect-for-making-stout-bun.jpg?w=1200&ssl=1",
+        "image": "mixe-spice-1.jpg",
+        "credit": "https://amazingackee.com/"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+        "category": 7,
+        "sku": "0001007",
+        "name": "Fish Biryani",
+        "description": "Shan Fish Biryani Mix has a perfect blend of rich and aromatic spices to help you rejoice the traditional taste of Fish Biryani.",
+        "has_sizes": false,
+        "size": null,
+        "price": "1.99",
+        "rating": "4.20",
+        "image_url": "http://www.shanfoods.com/assets/uploads/2016/11/fish-biryani.png",
+        "image": "fish-biryani.png",
+        "credit": "https://www.shanfoods.com/"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+        "category": 9,
+        "sku": "0001008",
+        "name": "Taco Seasoning",
+        "description": "Our Taco seasoning will help you create authentic & spicy Mexican dishes. Use our Taco spice for making tasty tacos along with our gluten-free Taco shells. It can also be added to enchiladas & quesadillas or to any Mexican style food. Use as a dry rub or wet marinade, it adds flavour to fish, meat & vegetables.\r\nAdd to minced chicken, turkey or pork with a little chopped onion to make your own Mexican style burgers! Mix into salad dressings or low-fat yoghurt to make marinades, dips or toppings for baked potatoes, salads, grilled or baked fish.",
+        "has_sizes": true,
+        "size": null,
+        "price": "2.25",
+        "rating": "5.00",
+        "image_url": "https://mrbells.ie/wp-content/uploads/2020/06/IMG_20200608_122519-scaled-e1593151942619.jpg",
+        "image": "taco-seasoning.jpg",
+        "credit": "https://mrbells.ie/"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+        "category": 3,
+        "sku": "0001009",
+        "name": "Coriander",
+        "description": "Also called cilantro, Chinese parsley and Mexican parsley, coriander has a strong, sage-citrus flavour that many find irresistible. Use coriander in Salsa & seafood; Mexican, Indian, Chinese & Thai dishes.",
+        "has_sizes": false,
+        "size": null,
+        "price": "1.99",
+        "rating": null,
+        "image_url": "https://mrgreenfreshfood.ie/wp-content/uploads/2019/09/fresh-coriander-leaves-500x500.jpg",
+        "image": "coriander.jpg",
+        "credit": "https://mrgreenfreshfood.ie/"
+    }
+}
+]

@@ -1,0 +1,82 @@
+[
+{
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+        "name": "clearance",
+        "friendly_name": "Clearance"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+        "name": "deals",
+        "friendly_name": "Deals"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+        "name": "fresh_herbs",
+        "friendly_name": "Fresh Herbs"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+        "name": "mix_spices",
+        "friendly_name": "Mix Spices"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 5,
+    "fields": {
+        "name": "pickles",
+        "friendly_name": "Pickles"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 6,
+    "fields": {
+        "name": "powdered_spice",
+        "friendly_name": "Powdered Spice"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 7,
+    "fields": {
+        "name": "recipes",
+        "friendly_name": "Recipes"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 8,
+    "fields": {
+        "name": "sauce",
+        "friendly_name": "Sauce"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 9,
+    "fields": {
+        "name": "seasoning",
+        "friendly_name": "Seasoning"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 10,
+    "fields": {
+        "name": "whole-spices",
+        "friendly_name": "Whole Spices"
+    }
+}
+]
