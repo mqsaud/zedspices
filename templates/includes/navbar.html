@@ -44,9 +44,7 @@
                     {% if request.user.is_superuser %}
                         <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                     {% endif %}
-                    <a href="{% url 'profile' %}" class="dropdown-item">My Details</a>
-                    <a href=" url 'delivery' " class="dropdown-item">Delivery Details</a>
-                    <a href=" url 'order_history' " class="dropdown-item">Order History</a>
+                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                     
                     <div class="dropdown-divider hr-green"></div> 
                     <a href="{% url 'account_logout' %}" class="dropdown-item">Log out</a>
@@ -63,7 +61,7 @@
                 </div>
             </li>
             {% endif %}
-            <li class="dropdown-divider hr-green"></li>
+            <li class="dropdown-divider"></li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" id="navbarCateDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Products
@@ -76,7 +74,7 @@
                     <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
                 </div>
             </li>
-            <li class="nav-item dropdown d-none d-lg-block">
+            <li class="nav-item dropdown d-block d-lg-block">
                 <a href="#" id="navbarDesktopDropdownContact" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Contact
                 </a>
@@ -108,11 +106,8 @@
                     {% if request.user.is_superuser %}
                         <a href="{% url 'add_product'  %}" class="dropdown-item">Product Management</a>
                     {% endif %}
-                    <a href=" {% url 'profile' %}" class="dropdown-item">My Details</a>
-                    <a href=" url 'delivery' " class="dropdown-item">Delivery Details</a>
-                    <a href=" url 'order_history' " class="dropdown-item">Order History</a>
-                    
-                    <div class="dropdown-divider hr-green"></div> 
+                    <a href=" {% url 'profile' %}" class="dropdown-item">My Profile</a>                   
+                    <div class="dropdown-divider"></div> 
                     <a href="{% url 'account_logout' %}" class="dropdown-item">Log out</a>
                 </div>
             </li>
@@ -141,7 +136,7 @@
                     </p>
                 </a>
             </li>
-            <li class="list-inline-item">
+            <li class="list-inline-item d-none d-lg-block">
                 <a class="nav-link" href="{% url 'wishlist' %}">
                     <div class="text-center">
                         <div><i class="fas fa-heart fa-lg"></i><span> Wishlist</span></div>
