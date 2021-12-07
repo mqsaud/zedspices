@@ -10,12 +10,15 @@
 {% endblock %}
 
 {% block content %}
-    <section class="container">
+    <section >
         <div class="row text-center">
-            <div class="col-12 col-md-6">
+            <div class="col-12 ">
                 <img src="{% static 'images/hero.jpg' %}" alt="Spice for Life logo" class="hero-image">
+                <!--Image Credit = https://dualsnatural.com/collections/spices?page=2 -->
             </div>
-            <div class="col-12 col-md-6 deals justify-content-center">
+        </div>
+        <div class="row">
+            <div class="col-12  deals justify-content-center">
                 <ul class="list-unstyled">
                     <li><a href="{% url 'products' %}?category=deals"><h1>Deals</h1></a></li>
                     <li><a href="{% url 'products' %}?category=clearance"><h1>Clearance</h1></a></li>

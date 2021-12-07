@@ -99,6 +99,37 @@
         </div>
     </div>
 </div>
+<div class="row container-fluid my-5 pb-5">
+    <div class="col-12 col-md-6 col-lg-4 offset-lg-2 border rounded-0 px-5 pt-3 pb-5 mb-5">
+        <h4 class="font-weight-bold mb-5">Rate {{ product.name }}</h4>
+        <form action="" method="POST" class="mb-5">
+            {% csrf_token %}
+            
+            <div class="rate">
+                <input type="radio" name="rating" id="rating-10" value="5" required><label for="rating-10" title="5"></label>
+                <input type="radio" name="rating" id="rating-9" value="4.5" required><label for="rating-9" title="4.5" class="half"></label>
+                <input type="radio" name="rating" id="rating-8" value="4" required><label for="rating-8" title="4"></label>
+                <input type="radio" name="rating" id="rating-7" value="3.5" required><label for="rating-7" title="3.5" class="half"></label>
+                <input type="radio" name="rating" id="rating-6" value="3" required><label for="rating-6" title="3"></label>
+                <input type="radio" name="rating" id="rating-5" value="2.5" required><label for="rating-5" title="2.5" class="half"></label>
+                <input type="radio" name="rating" id="rating-4" value="2" required><label for="rating-4" title="2"></label>
+                <input type="radio" name="rating" id="rating-3" value="1.5" required><label for="rating-3" title="1.5" class="half"></label>
+                <input type="radio" name="rating" id="rating-2" value="1" required><label for="rating-2" title="1"></label>
+                <input type="radio" name="rating" id="rating-1" value="0.5" required><label for="rating-1" title="0.5" class="half"></label>
+            </div>
+            <div class="mb-5">
+                <h5 class="font-weight-bold m-1">Review Title:</h5>
+                <input type="text" class="form-control rounded-0" name="title">
+                <br>
+                <h5 class="font-weight-bold m-1">Review:</h5>
+                <textarea name="review" class="form-control rounded-0 mb-2" cols="30" rows="10"></textarea>
+                <input type="submit" value="Submit Review" class="btn btn-large btn-black rounded-0 capital mb-5">
+ 
+            </div>
+        </form>
+    </div>
+</div>
+
 
 {% endblock %}
 

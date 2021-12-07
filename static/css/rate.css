@@ -1,0 +1,45 @@
+.rate > input {
+    display: none;
+    border-bottom: 2px dotted gold;
+}
+
+.rate{
+    display: inline-block;
+    
+}
+.rate > label{
+    float: right;
+}
+
+/* Change the radio buttons into stars */
+.rate > label::before{
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: FontAwesome;
+    content: "\f005";
+    padding: 0.5rem;
+    border: 2px dotted gold;
+    border-radius: 43%;
+    margin: 0.3rem;
+    cursor: pointer;
+}
+
+/* Overlape the half stars on full stars */
+.rate .half:before{
+    content: "\f089";
+    position: absolute;
+    padding: 0.5rem;
+    
+}
+
+/* Hover and click the stars */
+input:checked ~ label, label:hover ~ label{
+   color: #ffb500;
+}
+
+/* Highlight on hover */
+input:checked + label:hover, input:checked ~ label:hover, input:checked ~ label:hover ~ label,
+label:hover ~ input:checked ~ label{
+    color: #cc9000;
+}

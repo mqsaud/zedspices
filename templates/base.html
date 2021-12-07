@@ -17,7 +17,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- CSS -->
         <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/rate.css' %}" type="text/css">
         <!-- favicon -->
         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
         <!-- Stripe -->
@@ -45,14 +47,14 @@
     <header>
       {% include 'includes/navbar.html' %}
       <div class="delivery-offer row text-center">
-        <div class="col bg-black text-white">
-          <h4 class="capital my-1">Free delivery on order over €{{ free_delivery_threshold }}!</h4>
+        <div class="col ">
+          <h4 class="capital my-1 py-2">Free delivery on order over €{{ free_delivery_threshold }}!</h4>
         </div>
       </div>
     </header>
 
     <main>
-    <!-- Messages --><script src="https://kit.fontawesome.com/2c20b60c31.js" crossorigin="anonymous"></script>
+    <!-- Messages -->
     {% if messages %}
         <div class="message-container">
             {% for message in messages %}
@@ -81,7 +83,7 @@
     </main>
 
     <footer>
-
+      {% include 'includes/footer.html' %}
     </footer>
 
     {% block postloadjs %}
