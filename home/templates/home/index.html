@@ -13,28 +13,72 @@
     <section >
         <div class="row text-center">
             <div class="col-12 ">
-                <img src="{% static 'images/hero.jpg' %}" alt="Spice for Life logo" class="hero-image">
+                <img src="static/images/hero.jpg" alt="Spice for Life logo" class="hero-image">
                 <!--Image Credit = https://dualsnatural.com/collections/spices?page=2 -->
             </div>
         </div>
         <div class="row">
-            <div class="col-12  deals justify-content-center">
-                <ul class="list-unstyled">
-                    <li><a href="{% url 'products' %}?category=deals"><h1>Deals</h1></a></li>
-                    <li><a href="{% url 'products' %}?category=clearance"><h1>Clearance</h1></a></li>
-                    <li><a href="{% url 'products' %}?category=fresh_herbs"><h1>Fresh Herbs</h1></a></li>
-                    <li><a href="{% url 'products' %}?category=mix_spices"><h1>Mix Spices</h1></a></li>
-                    <li><a href="{% url 'products' %}?category=pickles"><h1>Pickle</h1></a></li>
-                    <li><a href="{% url 'products' %}?category=powdered_spice"><h1>Powdered Spice</h1></a></li>
-                    <li><a href="{% url 'products' %}?category=recipes"><h1>Recipes</h1></a></li>
-                    <li><a href="{% url 'products' %}?category=sauce"><h1>Sauces</h1></a></li>
-                    <li><a href="{% url 'products' %}?category=seasoning"><h1>Seasonings </h1></a></li>
-                    <li><a href="{% url 'products' %}?category=whole-spices" ><h1>Whole Spices</h1></a></li>
-                    
-                </ul>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center cate-display">
+                <div class=" product-card m-3 border-none">
+                    <a href="{% url 'products' %}?category=deals"><h1>Deals</h1></a> 
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center cate-display ">
+                <div class=" product-card m-3 border-none">
+                    <a href="{% url 'products' %}?category=clearance"><h1>Clearance</h1></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center cate-display ">
+                <div class=" product-card m-3 border-none">
+                    <a href="{% url 'products' %}?category=fresh_herbs"><h1>Fresh Herbs</h1></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center cate-display ">
+                <div class=" product-card m-3 border-none">
+                    <a href="{% url 'products' %}?category=mix_spices"><h1>Mix Spices</h1></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center  cate-display">
+                <div class=" product-card m-3 border-none">
+                    <a href="{% url 'products' %}?category=pickles"><h1>Pickle</h1></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center cate-display">
+                <div class=" product-card m-3 border-none">
+                    <a href="{% url 'products' %}?category=powdered_spice"><h1>Powdered Spice</h1></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center cate-display">
+                <div class=" product-card m-3 border-none">
+                    <a href="{% url 'products' %}?category=recipes"><h1>Recipes</h1></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center cate-display">
+                <div class=" product-card m-3 border-none">
+                    <a href="{% url 'products' %}?category=sauce"><h1>Sauces</h1></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center cate-display">
+                <div class=" product-card m-3 border-none">
+                    <a href="{% url 'products' %}?category=seasoning"><h1>Seasonings </h1></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center cate-display ">
+                <div class=" product-card m-3 border-none">
+                    <a href="{% url 'products' %}?category=whole-spices" ><h1>Whole Spices</h1></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center  cate-display">
+                <div class=" product-card m-3 border-none">
+                    <a href="{% url 'products' %}?category=oils" ><h1>Oils</h1></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center cate-display ">
+                <div class=" product-card m-3 border-none">
+                    <a href="{% url 'products' %}?category=assorted_items" ><h1>Assorted Items</h1></a>
+                </div>
             </div>
         </div>
-        
     </section>
     
 {% endblock %}

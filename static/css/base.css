@@ -111,12 +111,10 @@ footer:hover{
     width: 100%;
 }
 
-.deals{
+.cate-display{
     text-transform: uppercase;
-    display: flex;
-    align-items: center;
 }
-.deals h1{
+.cate-display h1{
     color: red;
 }
 
@@ -228,10 +226,6 @@ img:hover{
     padding-top: 15px;
 }
 
-a.category-badge > span.badge:hover{
-    background: #212529;
-    color: #fff !important;
-}
 .text-black{
     color:black;
 }
