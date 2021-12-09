@@ -99,35 +99,61 @@
         </div>
     </div>
 </div>
-<div class="row container-fluid my-5 pb-5">
-    <div class="col-12 col-md-6 col-lg-4 offset-lg-2 border rounded-0 px-5 pt-3 pb-5 mb-5">
-        <h4 class="font-weight-bold mb-5">Rate {{ product.name }}</h4>
-        <form action="" method="POST" class="mb-5">
-            {% csrf_token %}
-            
-            <div class="rate">
-                <input type="radio" name="rating" id="rating-10" value="5" required><label for="rating-10" title="5"></label>
-                <input type="radio" name="rating" id="rating-9" value="4.5" required><label for="rating-9" title="4.5" class="half"></label>
-                <input type="radio" name="rating" id="rating-8" value="4" required><label for="rating-8" title="4"></label>
-                <input type="radio" name="rating" id="rating-7" value="3.5" required><label for="rating-7" title="3.5" class="half"></label>
-                <input type="radio" name="rating" id="rating-6" value="3" required><label for="rating-6" title="3"></label>
-                <input type="radio" name="rating" id="rating-5" value="2.5" required><label for="rating-5" title="2.5" class="half"></label>
-                <input type="radio" name="rating" id="rating-4" value="2" required><label for="rating-4" title="2"></label>
-                <input type="radio" name="rating" id="rating-3" value="1.5" required><label for="rating-3" title="1.5" class="half"></label>
-                <input type="radio" name="rating" id="rating-2" value="1" required><label for="rating-2" title="1"></label>
-                <input type="radio" name="rating" id="rating-1" value="0.5" required><label for="rating-1" title="0.5" class="half"></label>
-            </div>
-            <div class="mb-5">
-                <h5 class="font-weight-bold m-1">Review Title:</h5>
-                <input type="text" class="form-control rounded-0" name="title">
-                <br>
-                <h5 class="font-weight-bold m-1">Review:</h5>
-                <textarea name="review" class="form-control rounded-0 mb-2" cols="30" rows="10"></textarea>
-                <input type="submit" value="Submit Review" class="btn btn-large btn-black rounded-0 capital mb-5">
- 
-            </div>
-        </form>
+
+<div id="reviews" class="row">
+    <div class="col-12 col-md-10 col-lg-4 offset-lg-4 mt-5">
+        <h2 class="text-black font-weight-bold mt-5">Reviews</h2>
+        {% if request.user.is_authenticated %}
+            {% if edit %}
+                <!-- Edit Review Form -->
+                <form method="POST" action="{% url 'edit_review' review.id %}#reviews">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="text-right">
+                        <button class="btn btn-black rounded-0 font-weight-bold" type="submit">Update Review</button>
+                    </div>
+                </form>
+            {% else %}
+                <!--Review Form -->
+                <form method="POST" action="{% url 'submit_review' product.id %}#reviews" ">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="text-right">
+                        <button class="btn btn-black rounded-0 font-weight-bold" type="submit">Submit Review</button>
+                    </div>
+                </form>
+            {% endif %}
+        {% else %}
+            <p class="small"> You must have an account or be logged in to leave a review.</p>
+        {% endif %}
     </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-10 col-lg-6 offset-lg-3">  
+        <!-- Showing all product reviews-->
+        {% for review in product.reviews.all %}
+            <div class="card rounded-0 mt-5">
+                <!-- Edit Review Button-->
+                {% if review.user == request.user or request.user.is_superuser %}
+                    <div class="card-head text-right">
+                        <a class="btn btn-black rounded-0" href="{% url 'edit_review' review.id %}#reviews">
+                            Edit Review
+                        </a>
+                    </div>
+                {% endif %}
+                <div class="card rounded-0">
+                    <p class="small text-muted"> by {{ review.user }} on {{ review.created_on_date|date:"d-m-Y"}}</p>    
+                    <p class="card rounded-0">{{ review.title }}<i class="ml-5 fas fa-star"></i> {{ review.rating }}/5</p>
+                    <p class="card rounded-0">{{ review.content }}</p>
+                </div>
+            </div>
+        {% empty %}
+            <div class="text-center mt-5">
+                <p>No reviews for this product, you can be the first...</p>
+            </div>
+        {% endfor%}
+    </div>
+</div> 
 </div>
 
 

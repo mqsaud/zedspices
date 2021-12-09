@@ -24,4 +24,4 @@ class ProductForm(forms.ModelForm):
 class RateForm(forms.ModelForm):
     class Meta:
         model = RateAndReview
-        fields = ['title', 'rating', 'review']
+        fields = ['title', 'rating', 'user_review']

@@ -3,8 +3,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, RateAndReview
+from .forms import ProductForm, RateForm
+from checkout.models import OrderLineItem, Order
 
 
 def all_products(request):
@@ -61,9 +62,10 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-
+    form = RateForm()
     context = {
         'product': product,
+        'form': form,
     }
     return render(request, 'products/product_detail.html', context)
 
@@ -138,3 +140,61 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required()
+def submit_review(request, product_id):
+    """
+    Registered user can post views about the products
+    """
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            form = RateForm(request.POST)
+            if form.is_valid():
+                review = form.save(commit=False)
+                review.user = request.user
+                review.product = product
+                review.save()
+                messages.success(request, 'Your reviews are successfully posted.')
+                return redirect(request.META.get('HTTP_REFERER'))
+            else:
+                messages.error(request, 'Unable to post your reviews ')
+    context = {
+        'form': form
+    }
+
+    return render(request, context)
+
+
+@login_required
+def edit_review(request, review_id):
+    """
+    A registered user can edit his own review.
+    """
+
+    review = get_object_or_404(RateAndReview, pk=review_id)
+    product = review.product
+
+    if request.method == 'POST':
+        form = RateForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your reviews has successfully edited')
+        else:
+            messages.error(request, 'Oops! Fail to edit the review. Try again')
+    
+    else:
+        form = RateForm(instance=review)
+
+    messages.info(request, 'You are editing your reviews')
+    template = 'products/product_detail.html'
+    context = {
+        'form': form,
+        'review': review,
+        'product': product,
+        'edit': True,
+    }
+    return render(request, template, context)

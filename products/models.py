@@ -43,14 +43,32 @@ class Product(models.Model):
 
 
 class RateAndReview(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    """
+    Model to rate and review the products
+    """
+    class META:
+        ordering = ['-created_on_date']
+
+    rate_selector = (
+       (5, '5'),
+       (4.5, '4.5'),
+       (4, '4'),
+       (3.5, '3.5'),
+       (3, '3' ),
+       (2.5, '2.5'),
+       (2, '2'),
+       (1.5, '1.5'),
+       (1, '1'),
+       (0.5, '0.5'),
+    )
+    
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, null=True, blank=True, related_name='reviews',
+                                on_delete=models.CASCADE)
     title = models.CharField(max_length=50, blank=True)
-    rating = models.FloatField()
-    review = models.TextField()
-    status = models.BooleanField()
+    rating = models.FloatField(choices=rate_selector, default=3.5)
+    user_review = models.TextField()
     created_on_date = models.DateTimeField(auto_now_add=True)
-    updated_on_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
