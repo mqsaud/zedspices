@@ -100,7 +100,7 @@
     </div>
 </div>
 
-<div id="reviews" class="row">
+<div id="reviews" class="row ">
     <div class="col-12 col-md-10 col-lg-4 offset-lg-4 mt-5">
         <h2 class="text-black font-weight-bold mt-5">Reviews</h2>
         {% if request.user.is_authenticated %}
@@ -124,37 +124,38 @@
                 </form>
             {% endif %}
         {% else %}
-            <p class="small"> You must have an account or be logged in to leave a review.</p>
+            <p class="small font-weight-bold"> Please login to post a review.</p>
         {% endif %}
     </div>
 </div>
-<div class="row">
-    <div class="col-12 col-md-10 col-lg-6 offset-lg-3">  
+<div class="row mb-5">
+    <div class="col-12 col-md-10 col-lg-4 offset-lg-4 mt-5">  
         <!-- Showing all product reviews-->
         {% for review in product.reviews.all %}
             <div class="card rounded-0 mt-5">
-                <!-- Edit Review Button-->
-                {% if review.user == request.user or request.user.is_superuser %}
-                    <div class="card-head text-right">
-                        <a class="btn btn-black rounded-0" href="{% url 'edit_review' review.id %}#reviews">
-                            Edit Review
-                        </a>
-                    </div>
-                {% endif %}
-                <div class="card rounded-0">
-                    <p class="small text-muted"> by {{ review.user }} on {{ review.created_on_date|date:"d-m-Y"}}</p>    
-                    <p class="card rounded-0">{{ review.title }}<i class="ml-5 fas fa-star"></i> {{ review.rating }}/5</p>
-                    <p class="card rounded-0">{{ review.content }}</p>
+                <div class="card-body">
+                    <p class="small text-muted card-header"> by {{ review.user }} on {{ review.created_on_date|date:"d-m-Y"}}</p>
+                    <p class=" border-none my-2 "><i class=" fas fa-star"> {{ review.rating }}/5</i> </p>    
+                    <p class=" card-header">{{ review.title }}:</p>
+                    <p class="card border-none py-3">{{ review.user_review }}</p>
                 </div>
             </div>
+             <!-- Edit Review Button-->
+             {% if review.user == request.user or request.user.is_superuser %}
+             <div class="card-head text-right">
+                 <a class="btn btn-black rounded-0 my-3" href="{% url 'edit_review' review.id %}#reviews">
+                     Edit Review
+                 </a>
+             </div>
+         {% endif %}
         {% empty %}
-            <div class="text-center mt-5">
-                <p>No reviews for this product, you can be the first...</p>
+            <div class="text-center mt-3">
+                <p>{{product.name}}{{product.size}}, has no reviews yet. You can be the first...</p>
             </div>
         {% endfor%}
     </div>
 </div> 
-</div>
+
 
 
 {% endblock %}

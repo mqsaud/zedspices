@@ -6,12 +6,15 @@ html{
 
 body{
     font-family: cairo, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 /* Push the contents of the webpage blew the Navbar */
 
 main{
     padding: 10px;
-    flex: 1 0 auto;
+    flex-grow: 1;
 }
 
 .capital{
@@ -63,9 +66,6 @@ main{
 footer{
     margin: 0;
     font-family:cairo , sans-serif ;
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100vw;
 }
 .foot-wrapper{
@@ -176,6 +176,10 @@ overlay{
 #no-border{
     border: none;
 }
+.border-none{
+    border: none;
+}
+
 
 .product-image-container{
     height: 250px;

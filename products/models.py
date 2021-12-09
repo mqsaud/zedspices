@@ -46,7 +46,7 @@ class RateAndReview(models.Model):
     """
     Model to rate and review the products
     """
-    class META:
+    class Meta:
         ordering = ['-created_on_date']
 
     rate_selector = (
