@@ -77,15 +77,15 @@
                         </div>
                     </div>
                     <div class="col-12 mt-2">
-                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 pro-detail-btn">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
-                        <input type="submit" class="btn btn-black rounded-0 capital mt-5" value="Add to Bag">
+                        <input type="submit" class="btn btn-black rounded-0 capital pro-detail-btn" value="Add to Bag">
                         {% if request.user.is_authenticated %}
-                                    <a class="btn btn-outline-black rounded-0 mt-5" href="{% url 'add_product_to_wishlist' product.id %}">
+                                    <a class="btn btn-outline-black rounded-0 pro-detail-btn" href="{% url 'add_product_to_wishlist' product.id %}">
                                         <span class="capital">Add to wishlist</span>
                                         <span class="icon">
                                             <i class="fas fa-chevron-right"></i>
@@ -150,7 +150,7 @@
          {% endif %}
         {% empty %}
             <div class="text-center mt-3">
-                <p>{{product.name}}{{product.size}}, has no reviews yet. You can be the first...</p>
+                <p>{{product.name}}{% if product.has_sizes %}{{product.size}}{% endif %}, has no reviews yet. You can be the first...</p>
             </div>
         {% endfor%}
     </div>
