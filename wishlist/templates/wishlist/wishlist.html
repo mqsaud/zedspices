@@ -3,16 +3,22 @@
 {% block sub_title %}Wishlist{% endblock %}
 
 {% block content %}
-	<div class="container-fluid large-container">
-		<div class="row">
-            <div class="col text-center mt-3">
-                <h1 class=" capital">Your Wish List</h1>
-                <hr class="w-50 mb-5">
-            </div>
+<div class="container-fluid large-container">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h1 class=" capital">Your Wish List</h1>
+            <hr class="w-50 mb-3">
+            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="capital">Keep Shopping</span>
+            </a>
         </div>
     </div>
-    <div class="row pro-item-display">
-	{% for product in wishlist.products.all %}
+</div>
+<div class="row pro-item-display">
+    {% for product in wishlist.products.all %}
     <div class="col-12 col-sm-12 col-md-6 col-lg-4 justify-content-center product-card ">
         <a class="card mt-3 mb-0  rounded-0" href="{% url 'product_detail' product.id %}">
             <div class="product-title">
@@ -29,8 +35,10 @@
         </a>
         {% if request.user.is_superuser %}
         <p class="border d-flex justify-content-between px-5 m-0">
-            <a href="{% url 'remove_from_wishlist' product.id %}" class="text-danger font-weight-bolder small">Remove   &nbsp;&nbsp;</a>
-            <a href="{% url 'product_detail' product.id %}" class="text-info font-weight-bolder small">&nbsp;Product Detail</a>
+            <a href="{% url 'remove_from_wishlist' product.id %}" class="text-danger font-weight-bolder small">Remove
+                &nbsp;&nbsp;</a>
+            <a href="{% url 'product_detail' product.id %}" class="text-info font-weight-bolder small">&nbsp;Product
+                Detail</a>
         </p>
         {% endif %}
         <div class="product-info pt-3 mb-4">
@@ -49,18 +57,31 @@
             </p>
         </div>
     </div>
-	{% empty %}
-        <div class="card product-card container">
-			<div class=" col-12 text-center my-5">
-				<h3 class=" capital"> Wishlist is Empty</h3>
-				<a class="btn btn-outline-black rounded-0  mt-2" href="{% url 'products' %}">
-					<span class="icon">
-						<i class="text-black fas fa-chevron-left"></i>
-					</span>
-					<span class="capital text-black">Keep Shopping</span>
-				</a>
-			</div>
+    {% empty %}
+    <div class="card product-card container">
+        <div class=" col-12 text-center my-5">
+            <h3 class=" capital"> Wishlist is Empty</h3>
+            <a class="btn btn-outline-black rounded-0  mt-2" href="{% url 'products' %}">
+                <span class="icon">
+                    <i class="text-black fas fa-chevron-left"></i>
+                </span>
+                <span class="capital text-black">Keep Shopping</span>
+            </a>
         </div>
-	{% endfor %}
-    </div>	
+    </div>
+    {% endfor %}
+    <div class="btt-button shadow-sm rounded-0 border border-black">
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-alt-circle-up  text-black mx-auto my-auto"></i>
+        </a>
+    </div>
+</div>
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
 {% endblock %}
