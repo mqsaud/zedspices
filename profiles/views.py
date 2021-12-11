@@ -3,7 +3,6 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
-from checkout.models import OrderLineItem
 
 from checkout.models import Order
 
@@ -35,14 +34,13 @@ def profile(request):
 
 
 def order_history(request, order_number):
-    order = get_object_or_404(Order, order_number=order_number)    
+    order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
         f'This ia a past confirmation for order number {order_number}.'
         'A confirmation email was sent on the order date'
     ))
-   
-    
+
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,

@@ -22,7 +22,7 @@ def add_to_bag(request, item_id):
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
         messages.success(
-            request, f'More {quantity} {product.name} {product.size} added to your bag ')
+            request, f'More {quantity} {product.name}{product.size} added to your bag ')
     else:
         bag[item_id] = quantity
         messages.success(
@@ -33,7 +33,9 @@ def add_to_bag(request, item_id):
 
 
 def adjust_bag(request, item_id):
-    """ Adjust the quantity of the specified product to the specified amount """
+    """ Adjust the quantity of the specified
+        product to the specified amount
+    """
 
     try:
         product = get_object_or_404(Product, pk=item_id)
@@ -83,5 +85,3 @@ def empty_bag(request):
         del request.session['bag']
         messages.info(request, f'All items removed from the bag')
     return redirect(reverse('view_bag'))
-   
-
