@@ -42,13 +42,13 @@ main{
 
 .delivery-offer h4{
     font-size: 1.1rem;
-    background-color: #555555;
+    background-color: #0bad54;
     color: white;
     border: 1px solid whitesmoke;
     letter-spacing: 2px;
 }
 .delivery-offer{
-    background-color: #9f9f9f;
+    background-color: aqua;
     padding: 5px;
 }
 .delivery-offer:hover{
@@ -70,10 +70,10 @@ footer{
 }
 .foot-wrapper{
     padding: 8px;
-    background-color: #9f9f9f;
+    background-color: aqua;
 }
 .ft-color{
-    background-color: #555555;
+    background-color: #0bad54;
     color: whitesmoke;
     padding-top:10px;
     border: 1px solid whitesmoke;
