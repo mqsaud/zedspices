@@ -128,6 +128,17 @@ def edit_product(request, product_id):
 
 
 @login_required
+def confirm_delete(request, product_id):
+    """ View to return about page"""
+    product = get_object_or_404(Product, pk=product_id)
+
+    context = {
+        'product': product
+    }
+    return render(request, 'products/confirm_delete.html', context)
+
+
+@login_required
 def delete_product(request, product_id):
     """
      Delete Product from the store
@@ -198,3 +209,5 @@ def edit_review(request, review_id):
         'edit': True,
     }
     return render(request, template, context)
+
+

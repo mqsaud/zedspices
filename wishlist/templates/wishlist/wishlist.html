@@ -48,11 +48,6 @@
                     <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                 </a>
                 {% endif%}
-                {% if product.rating %}
-                <span class=" small text-muted "><i class="fas fa-star pr-1"></i>{{ product.rating }} / 5</span>
-                {% else %}
-                <span class="small text-muted">No Rating</span>
-                {% endif %}
                 <span class="small text-muted"> €{{ product.price }}</span>
             </p>
         </div>

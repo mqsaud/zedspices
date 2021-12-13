@@ -6,7 +6,7 @@ class Category(models.Model):
     """ Define Category Model """
 
     class Meta:
-        verbose_name ='Category'
+        verbose_name = 'Category'
         verbose_name_plural = 'Categroies'
 
     name = models.CharField(max_length=254)
@@ -32,8 +32,6 @@ class Product(models.Model):
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     size = models.CharField(max_length=25, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     credit = models.URLField(max_length=1024)

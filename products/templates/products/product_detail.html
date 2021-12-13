@@ -35,15 +35,11 @@
                 </a>
             </p>
             {% endif%}
-            {% if product.rating %}
-            <small class="text-muted ml-0"><i class="fas fa-star pr-1"></i>{{ product.rating }} / 5</small>
-            {% else %}
-            <small class="text-muted">No Rating</small>
-            {% endif %}
+           
             {% if request.user.is_superuser %}
             <p class="m-0">
                 <a href="{% url 'edit_product' product.id %}" class="text-info">Edit</a>
-                <a href="{% url 'delete_product' product.id %}" class="text-danger pl-2">Delete</a>
+                <a href="{% url 'confirm_delete' product.id %}" class="text-danger pl-2">Delete</a>
             </p>
             {% endif %}
             <p class="mt-3">{{ product_id }}</p>
