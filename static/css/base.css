@@ -36,8 +36,10 @@ main{
     text-align: center;
 }
 
-.navbar h1{
+.navbar h2{
     color: red;
+    font-weight: 400;
+    font-size: 2.5rem;
 }
 
 .delivery-offer h4{
@@ -51,11 +53,7 @@ main{
     background-color: aqua;
     padding: 5px;
 }
-.delivery-offer:hover{
-    box-shadow: inset 0 1px 1px #72ac72, 0 0 8px #72ac72;
-    transition: .25s ease-in-out;
-    color: #000;
-}
+
 
 .input-outline{
     border-color: #72ac72;
@@ -100,11 +98,7 @@ li a .fab{
 .foot-wrapper a{
     color:tomato;
 }
-footer:hover{
-    box-shadow: inset 0 2px 2px #72ac72, 0 0 8px #72ac72;
-    transition: .25s ease-in-out;
-    color: #000;
-}
+
 /* Footer ----------------------------- End */
 
 .hero-image{
@@ -114,22 +108,12 @@ footer:hover{
 .cate-display{
     text-transform: uppercase;
 }
-.cate-display h1{
+.cate-display h2{
     color: red;
     font-weight: 900;
 }
 
-/*  Account, Login ------------------------------- Start */
 
-.account-card:hover {
-    text-decoration: none;
-    box-shadow: inset 0 1px 1px #72ac72, 0 0 8px #72ac72;
-    transition: .25s ease-in-out;
-    color: #000;
-    border: 4px solid aqua;
-}
-
-/*  Account, Login  -------------------------------  End */
 
 /* bag-------------------- start */
 
@@ -140,8 +124,7 @@ footer:hover{
 }
 
 .empty-bag{
-    background-color: rgb(8, 0, 0) !important;
-    color: white;
+    background-color: rgba(10, 10, 10, 0.185) !important;
     border: 1px solid red;
     font-weight: bold;
 }
@@ -165,12 +148,6 @@ overlay{
     color: black;
 }
 
-.product-card:hover {
-    text-decoration: none;
-    box-shadow: inset 0 1px 1px #72ac72, 0 0 8px #72ac72;
-    transition: .25s ease-in-out;
-    color: #000;
-}
 
 #no-border{
     border: none;

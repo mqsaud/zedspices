@@ -62,10 +62,14 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
+    wishlist = None
     product = get_object_or_404(Product, pk=product_id)
-    print(product)
-    wishlist = WishList.objects.get(user=request.user)
+
+    if request.user.is_authenticated:
+        try:
+            wishlist = WishList.objects.get(user=request.user)
+        except WishList.DoesNotExist:
+            pass
     form = RateForm()
     context = {
         'product': product,
