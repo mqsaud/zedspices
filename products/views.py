@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, RateAndReview
 from .forms import ProductForm, RateForm
-from checkout.models import OrderLineItem, Order
+from wishlist.models import WishList
 
 
 def all_products(request):
@@ -40,10 +40,12 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(request, "You didn't \
+                    enter any search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                        description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -62,11 +64,15 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    print(product)
+    wishlist = WishList.objects.get(user=request.user)
     form = RateForm()
     context = {
         'product': product,
         'form': form,
+        'wishlist': wishlist,
     }
+
     return render(request, 'products/product_detail.html', context)
 
 
@@ -74,7 +80,8 @@ def product_detail(request, product_id):
 def add_product(request):
     """ Add product to store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, Only the authorized persons are allowed to perform this task')
+        messages.error(request, 'Sorry, Only the authorized persons \
+            are allowed to perform this task')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -84,10 +91,11 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product. \
+                Please ensure the form is valid.')
     else:
         form = ProductForm()
-    
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -101,8 +109,10 @@ def edit_product(request, product_id):
     """
     Edit a product in store
     """
+    sorry_msg = 'Sorry, Only the authorized persons \
+        are allowed to perform this task'
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, Only the authorized persons are allowed to perform this task')
+        messages.error(request, sorry_msg)
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -113,7 +123,8 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid')
+            messages.error(request, 'Failed to update product. \
+                Please ensure the form is valid')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing { product.name }')
@@ -144,7 +155,8 @@ def delete_product(request, product_id):
      Delete Product from the store
     """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, Only the authorized persons are allowed to perform this task')
+        messages.error(request, 'Sorry, Only the authorized persons \
+            are allowed to perform this task')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -169,7 +181,8 @@ def submit_review(request, product_id):
                 review.user = request.user
                 review.product = product
                 review.save()
-                messages.success(request, 'Your reviews are successfully posted.')
+                messages.success(request,
+                                 'Your reviews are successfully posted.')
                 return redirect(request.META.get('HTTP_REFERER'))
             else:
                 messages.error(request, 'Unable to post your reviews ')
@@ -196,7 +209,7 @@ def edit_review(request, review_id):
             messages.success(request, 'Your reviews has successfully edited')
         else:
             messages.error(request, 'Oops! Fail to edit the review. Try again')
-    
+
     else:
         form = RateForm(instance=review)
 
@@ -209,5 +222,3 @@ def edit_review(request, review_id):
         'edit': True,
     }
     return render(request, template, context)
-
-

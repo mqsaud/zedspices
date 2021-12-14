@@ -52,16 +52,18 @@ class RateAndReview(models.Model):
        (4.5, '4.5'),
        (4, '4'),
        (3.5, '3.5'),
-       (3, '3' ),
+       (3, '3'),
        (2.5, '2.5'),
        (2, '2'),
        (1.5, '1.5'),
        (1, '1'),
        (0.5, '0.5'),
     )
-    
-    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, null=True, blank=True, related_name='reviews',
+
+    user = models.ForeignKey(User, null=True, blank=True,
+                             on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, null=True, blank=True,
+                                related_name='reviews',
                                 on_delete=models.CASCADE)
     title = models.CharField(max_length=50, blank=True)
     rating = models.FloatField(choices=rate_selector, default=3.5)

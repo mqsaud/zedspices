@@ -10,9 +10,9 @@
             <hr class="w-50 mb-5">
         </div>
     </div>
-    <div class="row mt-5">
+    <div class="row mt-2">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-            <div class="product-image-container">
+            <div class="product-image-container ">
                 {% if product.image %}
                 <a href="{{ product.image_url }}" target="_blank">
                     <img class="product-image" src="{{ product.image.url }}" alt="{{ prodduct.name }}">
@@ -24,7 +24,7 @@
                 {% endif %}
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mt-5">
+        <div class="col-12 col-md-6 col-lg-4 mt-1">
             <h5 class="mb-0 font-weight-bold">{{ product.name }}</h5>
             <p class="text-black my-0"><strong>{{ product.size }}</strong></p>
             <p class="lead mb-0 text-left "><strong>€{{ product.price }}</strong></p>
@@ -72,21 +72,34 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 mt-2">
-                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 pro-detail-btn">
+                    <div class="col-12 mt-2 ">
+                       <p class="m-0 text-center  w-50"> <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 pro-detail-btn">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
-                            <span class="text-uppercase">Keep Shopping</span>
+                            <span class="text-uppercase ">Keep Shopping</span>
                         </a>
-                        <input type="submit" class="btn btn-black rounded-0 capital pro-detail-btn" value="Add to Bag">
+                        </p>
+                        <p class="m-0 text-center w-50" ><input type="submit" class="btn btn-black rounded-0 capital pro-detail-btn" value="Add to Bag"></p>
                         {% if request.user.is_authenticated %}
+                        <p class="m-0 text-center w-50">
+                            {%  if product in wishlist.products.all %}
+                            <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-outline-black rounded-0 pro-detail-btn">
+                                <span class="capital">Remove from wishlist</span>
+                                <span class="icon">
+                                    <i class="fas fa-chevron-right"></i>
+                                </span> 
+                            </a>
+                            <p class="text-center small w-50">{{ product.name }} is in your wishlist</p>
+                            {% else %}
                                     <a class="btn btn-outline-black rounded-0 pro-detail-btn" href="{% url 'add_product_to_wishlist' product.id %}">
                                         <span class="capital">Add to wishlist</span>
                                         <span class="icon">
                                             <i class="fas fa-chevron-right"></i>
                                         </span> 
                                     </a>
+                            {% endif %}
+                        </p>    
                         {% endif %}
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -97,7 +110,7 @@
 </div>
 
 <div id="reviews" class="row ">
-    <div class="col-12 col-md-10 col-lg-4 offset-lg-4 mt-5">
+    <div class="col-12 col-md-10 offset-md-1 col-lg-4 offset-lg-4 mt-5">
         <h2 class="text-black font-weight-bold mt-5">Reviews</h2>
         {% if request.user.is_authenticated %}
             {% if edit %}
@@ -125,7 +138,7 @@
     </div>
 </div>
 <div class="row mb-5">
-    <div class="col-12 col-md-10 col-lg-4 offset-lg-4 mt-5">  
+    <div class="col-12 col-md-10 offset-md-1 col-lg-4 offset-lg-4 mt-5">  
         <!-- Showing all product reviews-->
         {% for review in product.reviews.all %}
             <div class="card rounded-0 mt-5">
@@ -151,7 +164,7 @@
         {% endfor%}
     </div>
 </div> 
-<div class="btt-button shadow-sm rounded-0 border border-black">
+<div class="btt-button shadow-sm">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-alt-circle-up  text-black mx-auto my-auto"></i>
     </a>

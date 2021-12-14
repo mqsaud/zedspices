@@ -22,7 +22,8 @@ def add_to_bag(request, item_id):
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
         messages.success(
-            request, f'More {quantity} {product.name}{product.size} added to your bag ')
+            request, f'More {quantity} {product.name}{product.size} \
+                added to your bag ')
     else:
         bag[item_id] = quantity
         messages.success(
@@ -83,5 +84,5 @@ def empty_bag(request):
     """
     if 'bag' in request.session:
         del request.session['bag']
-        messages.info(request, f'All items removed from the bag')
+        messages.info(request, 'All items removed from the bag')
     return redirect(reverse('view_bag'))

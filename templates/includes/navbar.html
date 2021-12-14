@@ -11,7 +11,7 @@
         <ul class="navbar-nav mx-auto">
             <li class="nav-item d-lg-none">
                 <a href="{% url 'home' %}" class="nav-link">
-                    <i class="nav-icon fas fa-home"></i>Home
+                    <i class="nav-icon fas fa-home"></i><span> Home</span>
                 </a>
             </li>
             <li class="nav-item d-block d-lg-none">
@@ -38,7 +38,7 @@
             {% if user.is_authenticated %}
             <li class="nav-item dropdown d-lg-none">
                 <a href="#" id="navbarMobileDropdownProfile" class="nav-link dropdown-toggle text-black" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="nav-icon fas fa-user-circle"></i>Profile
+                    <i class="nav-icon fas fa-user-circle"></i><span> Profile</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarMobileDropdownProfile">
                     {% if request.user.is_superuser %}
@@ -92,13 +92,13 @@
           <ul class="navbar-nav mx-auto">
             <li class="nav-item d-none d-lg-block">
                 <a href="{% url 'home' %}" class="nav-link">
-                    <i class="nav-icon fas fa-home"></i>
+                    <i class="nav-icon fas fa-home"></i><span> Home</span>
                 </a>
             </li>
             {% if request.user.is_authenticated %}
             <li class="nav-item dropdown d-none d-lg-block">
                 <a href="#" id="navbarDesktopDropdownProfile" class="nav-link dropdown-toggle text-black" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="nav-icon fas fa-user-circle"></i>Profile
+                    <i class="nav-icon fas fa-user-circle"></i><span> Profile</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDesktopDropdownProfile">
                     {% if request.user.is_superuser %}
