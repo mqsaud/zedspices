@@ -26,7 +26,11 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4 mt-1">
             <h5 class="mb-0 font-weight-bold">{{ product.name }}</h5>
-            <p class="text-black my-0"><strong>{{ product.size }}</strong></p>
+            <p class="text-black my-0">
+                <strong>
+                    {% if product.has_sizes %}{{ product.size }}{% endif %}
+                </strong>
+            </p>
             <p class="lead mb-0 text-left "><strong>€{{ product.price }}</strong></p>
             {% if product.category %}
             <p class="small mt-1 mb-0">

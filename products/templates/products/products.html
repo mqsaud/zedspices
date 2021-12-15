@@ -72,7 +72,11 @@
                 <img class="product-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 {% endif %}
             </div>
-            <p class="text-black text-center mt-2 mb-1"><strong>Size: {{ product.size }}</strong></p>
+            <p class="text-black text-center mt-2 mb-1">
+                <strong>
+                    {% if product.has_sizes %}{{ product.size }}{% else %}&nbsp{% endif %}
+                </strong>
+            </p>
             <p class="my-1  rounded-0 text-center"><a class=" btn  btn-success rounded-0" href="{% url 'product_detail' product.id %}">Product Detail</a></p>
         {% if request.user.is_superuser %}
         <p class="border d-flex justify-content-between px-5 m-0">
