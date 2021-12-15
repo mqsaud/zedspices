@@ -36,7 +36,7 @@ main{
     text-align: center;
 }
 
-.navbar h2{
+#logo-no-line h2{
     color: red;
     font-weight: 400;
     font-size: 2.5rem;
@@ -108,7 +108,7 @@ li a .fab{
 .cate-display{
     text-transform: uppercase;
 }
-.cate-display h2{
+ .cate-display .category-display h2{
     color: red;
     font-weight: 900;
 }
