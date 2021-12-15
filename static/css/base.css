@@ -37,7 +37,7 @@ main{
 }
 
 #logo-no-line h2{
-    color: red;
+    color: red !important;
     font-weight: 400;
     font-size: 2.5rem;
 }
@@ -109,7 +109,7 @@ li a .fab{
     text-transform: uppercase;
 }
  .cate-display .category-display h2{
-    color: red;
+    color: red !important;
     font-weight: 900;
 }
 
@@ -376,11 +376,6 @@ overlay{
         padding-bottom: 10px;
     }
 
-    .product-card{
-        padding: 10px 20px;
-        margin-top: 2px ;
-        color: black;
-    }
 
     .pro-item-display{
         margin: 2px 2px;
