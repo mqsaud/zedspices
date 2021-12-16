@@ -1,108 +1,127 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome mqsaud,
+# Milestone Project Four -  Z  Spices
+ZSpice is a spice shop website. It sells a veriety of spices. The taget audience of ZSpice shop are the peiple who look for good quality spices.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+To visit the website please click [Hare](https://zspices.herokuapp.com/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Responsive-Site](static/images/responsive.jpg)
 
-## Gitpod Reminders
+## Contents
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- [**User Experience (UX)**](<#user-experience-(ux)>)
 
-`python3 -m http.server`
+  - [Project Goals](#project-goals)
+  - [User Goals](#user-goals)
+  - [Design](#design)
+  - [Wireframes](#wireframes)
 
-A blue button should appear to click: _Make Public_,
+- [**Features**](#features)
 
-Another blue button should appear to click: _Open Browser_.
+  - [Existing Features](#features)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- [**Technologies**](#technologies-used)
 
-A blue button should appear to click: _Make Public_,
+  - [Languages Used](#technologies-used)
+  - [Frameworks, Libraries and Programs Used](#technologies-used)
 
-Another blue button should appear to click: _Open Browser_.
+- [**Testing**](#testing)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- [**Deployment**](#deployment)
 
-To log into the Heroku toolbelt CLI:
+## User Experience (UX)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Project Goals
+- Create a website to sell high-quality spices.
+- Create and implement navigation throughout the site to help users to register, log in and buy products  
+  and post rating and reviews about the products.
+- Implement  CRUD (create, read, update and delete) functionalities for site owner so, he will be able     
+  to add new products and edit/delete the existing products.  
+- Implement following technologies:  
+CSS, HTML, JavaScript, Python and django'.  
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## User Stories
 
-------
+### User Goals:
+#### New User Goals:  
+As a new user, I want to achieve the following goals.  
+a- I want to be able to view all product.    
+b- I want to be able to register on the website.  
+c- I want to be able to make a wishlist of the products for future buying.    
+### Returning User Goals:  
+a- As a returning user, I want to be able to log in and log out.  
+b- As a returning user, I want to be able to access my save wishlist.  
+c- As a returning user, I want to be able to add or delete products from my wishlist.  
+### Site Owner User Goals:  
+a- As the site owner, I want to be able to add new products and edit/delete the existing products on the website.  
+b- As the site owner, I want to attract the audience with the nice and attractive design of the website.  
 
-## Release History
+### Design  
+* The design of this project is simple.  
+Bootstrap 4.4 framework was used to build this project website.  
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Colors  
+* I used followig colours including text colors.  
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![color used to build website](static/images/zspices-color.jpg)  
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Features
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Existing Features : 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- **Navigation**:  
+  A Bootstrap-based navigation bar has added with the company logo and company name on the left in desktop and mobile view.
+  - **Desktop Navbar**  
+  The desktop navbar shows Products, Contact, Home, Login/Profile, Shopping-cart/Shopping-bag and Wishlist links. A product search bar is also available in the desktop navbar.  
+  - **Mobile Navbar**  
+  In mobile navbar Products, Contact, Home, Login/Profile, Shopping-cart/Shopping-bag and Wishlist links and search bar is hidden in the dropdown menu.  
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- **Footer**:  
+The footer includes the email address and Social link icons.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- **Home Page**:  
+The landing page contains a beautiful hero image.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- **Profile**:  
+Once a user logged in, the login link changed into Profile link. 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- **Search**:  
+Users can search their required products using the search function available inthe navbar.  
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+**Security**  
+Django "allauth" app used for security. This app provide following functions.  
+- User registration including email verification 
+- User Log in  
+- User Log out  
+- Password Recovery  
+- Database configurations, username, password/"secret key" for Heroku, Stripe and AWS S3 are stored in a separate file, and gitpod's .gitignore file was used to prevent this file from uploading to GitHub.  
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Technologies Used
+- Following languages and frameworks were used to build the website
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Languages
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![Image](https://res.cloudinary.com/docyuifc9/image/upload/c_scale,w_60/v1619744963/html5_rjkhoe.png) [HTML5](https://en.wikipedia.org/wiki/HTML5)
+>
+![Image](https://res.cloudinary.com/docyuifc9/image/upload/c_scale,w_60/v1619744731/css_mvqiie.png) [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+>
+![Image](https://res.cloudinary.com/docyuifc9/image/upload/c_scale,w_60/v1619744731/js_fveoqo.png) [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![Image](https://res.cloudinary.com/docyuifc9/image/upload/c_scale,w_60/pictures/logos/python_mbbj4o.png) [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Frameworks, Libraries and Programs:  
 
-------
+![image](http://www.djangoproject.com/m/img/badges/djangopowered126x54.gif) [Django](http://www.djangoproject.com/)  
+  
+![image](https://avatars.githubusercontent.com/u/9919?s=200&v=4) [GitHub](https://github.com/github)
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+![Image](static/images/gitpod-logo.png) [Gitpod](https://www.gitpod.io/) 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+ 
 
-**How will this affect me?**
+![Image](https://res.cloudinary.com/docyuifc9/image/upload/c_scale,w_60/v1619745480/pictures/logos/font_awesome_logo_djde4p.png) [Font Awesome](https://fontawesome.com/) 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![Image](https://res.cloudinary.com/docyuifc9/image/upload/c_scale,w_60/v1619745480/pictures/logos/balsamiq_wireframes_logo_eieeug.png) [Balsamiq](https://balsamiq.com/) 
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
 
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
