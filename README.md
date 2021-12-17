@@ -336,7 +336,7 @@ git push
     - Create policy
     - Under JSON tab, click Import managed policy
     - Choose AmazongS3FullAccess
-    - Edit the resource to include the Bucket ARN noted earlier when creating the Bucket Policy
+    - Edit the resource to include the Bucket ARN.
     - Click next step and go to Review policy
     - Give the policy a name and description
     - Create policy
