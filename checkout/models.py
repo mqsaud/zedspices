@@ -63,7 +63,7 @@ class Order(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Override the original save methoh to set the order number
+        Override the original save method to set the order number
         if it haasn't been set already
         """
         if not self.order_number:
@@ -88,7 +88,7 @@ class OrderLineItem(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Override the original save methoh to set the order number
+        Override the original save method to set the order number
         if it haasn't been set already
         """
         self.lineitem_total = self.product.price * self.quantity
