@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700&display=swap');
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: cairo, sans-serif;
     display: flex;
     flex-direction: column;
@@ -12,103 +12,103 @@ body{
 }
 /* Push the contents of the webpage blew the Navbar */
 
-main{
+main {
     padding: 10px;
     flex-grow: 1;
 }
 
-.capital{
+.capital {
     text-transform: uppercase;
 }
 
-.bg-black{
+.bg-black {
     background: #000;
 }
 
 
 
 /* navbar ----------------------------- Start */
-#logo-no-line, #no-deco{
+#logo-no-line, #no-deco {
     text-decoration: none;
 }
 
-.navbar-collapse{
+.navbar-collapse {
     text-align: center;
 }
 
-#logo-no-line h2{
+#logo-no-line h2 {
     color: red !important;
     font-weight: 400;
     font-size: 2.5rem;
 }
 
-.delivery-offer h4{
+.delivery-offer h4 {
     font-size: 1.1rem;
     background-color: #0bad54;
     color: white;
     border: 1px solid whitesmoke;
     letter-spacing: 2px;
 }
-.delivery-offer{
+.delivery-offer {
     background-color: aqua;
-    padding: 5px;
+    width: 100vw;
 }
 
 
-.input-outline{
+.input-outline {
     border-color: #72ac72;
 }
 /* navbar ------------------------------ End */
 
 /* ++ FOOTER+-----------------------+START++ */
-footer{
+footer {
     margin: 0;
     font-family:cairo , sans-serif ;
     width: 100vw;
 }
-.foot-wrapper{
+.foot-wrapper {
     padding: 8px;
     background-color: aqua;
 }
-.ft-color{
+.ft-color {
     background-color: #0bad54;
     color: whitesmoke;
     padding-top:10px;
     border: 1px solid whitesmoke;
     letter-spacing: 2px;
 }
- .fab{
+ .fab {
     font-size: 25px;
     line-height: 10px;
     text-align: center;
     color: whitesmoke;
 }
-li a .fab{
+li a .fab {
     letter-spacing: 20px;
 }
 
-.fab:hover{
+.fab:hover {
     color:tomato;
     font-size: 26px;
 }
-.foot-wrapper h5{
+.foot-wrapper h5 {
       color: whitesmoke;
 }
 .foot-wrapper h5:hover,
-.foot-wrapper a{
+.foot-wrapper a {
     color:tomato;
 }
 
 /* Footer ----------------------------- End */
 
-.hero-image{
+.hero-image {
     width: 100%;
 }
 
-.cate-display{
+.cate-display {
     text-transform: uppercase;
 }
- .cate-display .category-display h2{
+ .cate-display .category-display h2 {
     color: red !important;
     font-weight: 900;
 }
@@ -117,13 +117,13 @@ li a .fab{
 
 /* bag-------------------- start */
 
-#bag-table-pad{
+#bag-table-pad {
     padding-top: 50px;
     padding-bottom: 10px;
     padding-left: 25px;
 }
 
-.empty-bag{
+.empty-bag {
     background-color: rgba(10, 10, 10, 0.185) !important;
     border: 1px solid red;
     font-weight: bold;
@@ -133,7 +133,7 @@ li a .fab{
 
 
 /* products ------------- start */
-overlay{
+overlay {
     height: 100%;
     width: 100%;
     top: 72px;
@@ -142,65 +142,64 @@ overlay{
     z-index: -1;
 }
 
-.product-card{
+.product-card {
     padding: 10px 50px;
     margin-top: 2px ;
     color: black;
 }
 
 
-#no-border{
+#no-border {
     border: none;
 }
-.border-none{
+.border-none {
     border: none;
 }
 
 
-.product-image-container{
+.product-image-container {
     height: 250px;
     max-width: 250px;
-    display: flex;
-    align-items: center;
+    text-align: center;
     
 }
 
 
-.image-size{
+.image-size {
     height: 250px;
     width: 100%;
 }
 
-.product-image{
+.product-image {
     padding-top: 10px;
     height: 100%;
     max-width: 100%;
     object-fit: scale-down;
 }
 
-.product-title{
+.product-title {
     height: 4rem;
     padding: 5px;
     text-align: center;
 }
 
-.product-info{
+.product-info {
 
     background-color: aqua;
     color: black;
     padding: 5px;
 }
 
-.cate-info{
+.cate-info {
     background-color: aqua;
     color: black;
 }
 
-.display-name{
+.display-name {
     padding-top: 15px;
 }
 
-.text-black{
+.text-black {
     color:black;
 }
 
@@ -219,7 +218,7 @@ overlay{
 .update-link {
     cursor: pointer;
 }
-.btt-link i{
+.btt-link i {
     font-size: 2rem;
 }
 
@@ -235,25 +234,25 @@ overlay{
     background: black;
     color: white;
 }
-.btn-black:hover{
+.btn-black:hover {
     background: white;
     color: black;
     box-shadow: inset 0 1px 1px #72ac72, 0 0 8px #72ac72;
     transition: .25s ease-in-out;
 }
 
-.btn-outline-black{
+.btn-outline-black {
     background: white;
     color: black !important;  
     border: 1px solid black;
 }
 
 
-.pro-detail-btn{
+.pro-detail-btn {
     margin-top: 10px;
 }
 
-.pro-item-display{
+.pro-item-display {
     margin: 48px;
 }
 
@@ -262,7 +261,7 @@ overlay{
 /* products ---------------------------------- end */
 
 /* Toast -------------------------------------- Start */
-.message-container{
+.message-container {
     position: fixed;
     top: 72px;
     right: 15px;
@@ -270,12 +269,14 @@ overlay{
     box-shadow: inset 0 1px 1px #72ac72, 0 0 8px #72ac72;
     transition: .25s ease-in-out;
 }
-.custom-toast{
+.custom-toast {
     overflow: visible;
+    border: 2px solid aqua;
+    margin: 1px;
 }
 
-.toast-capper{
-    height: 2px;
+.toast-capper {
+    height: 10px;
 
 }
 
@@ -283,9 +284,9 @@ overlay{
 .arrow-up {
     width: 0; 
     height: 0; 
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 20px solid black;
+    border-left: 1px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: 2px solid black;
   }
 
 /* Convenience classes - colors copied from Bootstrap */
@@ -321,11 +322,11 @@ overlay{
     border-bottom-color: #343a40 !important;
 }
 
-.text-yellow{
+.text-yellow {
     color: rgb(241, 226, 10);
 }
 
-.bag-note-wrapper{
+.bag-note-wrapper {
     height: 150px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -361,38 +362,31 @@ overlay{
     border-radius: 0;
 }
 /*  Product Form -------------------------------- End */
-/* Wish List -------------------------------------start */
 
 
-
-
-
-/* Wish List -----------------------------------------end */
-
-
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     #bag-table-pad{
         padding-top: 10px;
         padding-bottom: 10px;
     }
 
 
-    .pro-item-display{
+    .pro-item-display {
         margin: 2px 2px;
     }
 
-    .pro-detail-btn{
+    .pro-detail-btn {
         margin-top: 7px;
     }
     
     
-    .product-card{
+    .product-card {
         padding: 2px 10px;
         margin-top: 2px ;
         color: black;
     }
 
-    img .img-fluid{
+    img .img-fluid {
         max-width:max-content;
     }
 

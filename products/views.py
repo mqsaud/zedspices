@@ -187,14 +187,14 @@ def submit_review(request, product_id):
                 review.save()
                 messages.success(request,
                                  'Your reviews are successfully posted.')
-                return redirect(request.META.get('HTTP_REFERER'))
             else:
                 messages.error(request, 'Unable to post your reviews ')
     context = {
-        'form': form
+        'product': product,
+        'form': form,
     }
 
-    return render(request, context)
+    return render(request, 'products/product_detail.html', context)
 
 
 @login_required

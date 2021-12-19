@@ -2,7 +2,7 @@
 # Milestone Project Four -  Z  Spices
 ZSpice is a spice shop website. It sells a veriety of spices. The taget audience of ZSpice shop are the peiple who look for good quality spices.
 
-To visit the website please click [Hare](https://zspices.herokuapp.com/)
+To visit the website please click [Here](https://zspices.herokuapp.com/)
 
 ![Responsive-Site](static/images/responsive.jpg)
 
@@ -286,7 +286,7 @@ git push
 **AWS S3 Bucket setup**
 1. Create an Amazon AWS account
 2. Search for S3 and create a new bucket  
-    - writ your bucket name  
+    - write your bucket name  
     - Choose the AWS region near to you  
     - Enable ACLs 
     - Uncheck Block all public access and checkin the acknowledgement
@@ -428,13 +428,13 @@ Media
 Most of the pictures are taken from internet. All credits are given at the point of use.  
 
 ### Credits
-A large amount of code came from the Code Institute, Boutique Ado tutorial.  
+A large amount of code is refered to Code Institute, Boutique Ado tutorial.  
 For the imahes of the products, I added a URL field in product model. No product can be registered without writing the credit in this field.  
 Django Documentation: https://docs.djangoproject.com/en/4.0/  
 Bootstrap Documentation: https://getbootstrap.com/docs/4.6/getting-started/introduction/
 
 ### Acknowledgment
-My mentor for his support and feedback.   
+Special thanks to my mentor Mr Sandeep Aggarwal, who took a keen interest in my project. He guided me to resolve the CSS issues and some security flaws in python code.  
 Code Institute tutor support.
 
 #### [Back to Contents](#contents)

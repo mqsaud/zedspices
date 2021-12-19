@@ -38,7 +38,13 @@ def add_product_to_wishlist(request, product_id):
     wishlist, _ = WishList.objects.get_or_create(user=request.user)
     wishlist.products.add(product)
     messages.info(request, 'Product successfully added to your wishlist')
-    return redirect(request.META.get('HTTP_REFERER'))
+    # return redirect(request.META.get('HTTP_REFERER'))
+    context = {
+        'product': product,
+        'wishlist': wishlist,
+    }
+
+    return render(request, 'products/product_detail.html', context)
 
 
 @login_required
@@ -52,4 +58,9 @@ def remove_from_wishlist(request, product_id):
     wishlist.products.remove(product)
     messages.info(request, "You removed a product from your wishlist")
 
-    return redirect(request.META.get('HTTP_REFERER'))
+    context = {
+        'product': product,
+        'wishlist': wishlist,
+    }
+
+    return render(request, 'products/product_detail.html', context)
