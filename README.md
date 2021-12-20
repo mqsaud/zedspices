@@ -221,7 +221,7 @@ I used  [JSHINT](https://jshint.com/) to check validity of my JS code and there 
 
 ### Further Testing  
 - Browsers  
-The website was tested on Chrom, Firefox, Cclean, Edge, Opera and InternetExplorer. It is working great on all browsers.  Only InternetExplorer does not support webP image format. To show the webP based hero image following code is added in base.html.  
+The website was tested on Chrom, Firefox, Cclean, Edge, Opera and InternetExplorer. It is working great on all browsers.  Only InternetExplorer does not support webP image format. To show the webP based images following code is added in base.html.  
 ![image](static/images/ie-code.jpg)  
 
 ### Chrom Lighthouse Result
